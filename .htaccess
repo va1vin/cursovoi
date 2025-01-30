@@ -1,0 +1,24 @@
+
+# Включаем механизм перезаписи URL
+#RewriteEngine On
+
+# Если запрашиваемый файл или папка существуют, используем их напрямую
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+# Перенаправляем все остальные запросы в index.php
+#RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Устанавливаем заголовки для CORS (если нужно)
+#<IfModule mod_headers.c>
+ #   Header set Access-Control-Allow-Origin "*"
+  #  Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+   # Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+#</IfModule>
+
+# Включаем поддержку JSON (если нужно)
+#AddType application/json .json
+
+# Отключаем вывод ошибок PHP на продакшене
+#php_flag display_errors Off
+#php_value error_reporting E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
