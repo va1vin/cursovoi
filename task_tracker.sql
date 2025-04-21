@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 30 2025 г., 14:52
+-- Время создания: Апр 19 2025 г., 10:47
 -- Версия сервера: 5.7.39
 -- Версия PHP: 8.0.22
 
@@ -40,7 +40,8 @@ CREATE TABLE `projects` (
 
 INSERT INTO `projects` (`id`, `name`, `description`, `created_at`) VALUES
 (1, 'Разработка курсового проекта таск трекер', 'Разработка курсового проекта таск трекер', '2025-01-30 11:34:58'),
-(3, '11', NULL, '2025-01-30 11:38:27');
+(3, '11', NULL, '2025-01-30 11:38:27'),
+(4, 'аывп', 'ывп', '2025-01-31 11:09:34');
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,8 @@ CREATE TABLE `project_users` (
 --
 
 INSERT INTO `project_users` (`project_id`, `user_id`, `role`) VALUES
-(1, 1, 'admin');
+(1, 1, 'admin'),
+(1, 2, 'admin');
 
 -- --------------------------------------------------------
 
@@ -82,7 +84,11 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`id`, `project_id`, `title`, `description`, `status`, `assigned_to`, `created_at`) VALUES
-(1, 1, '1', '1', 'todo', 1, '2025-01-30 11:46:22');
+(1, 1, '1', '1', 'done', 1, '2025-01-30 11:46:22'),
+(2, 4, 'вапы', 'вып', 'todo', NULL, '2025-01-31 11:10:17'),
+(3, 1, 'ывпфя', 'врвыроыв', 'todo', 1, '2025-02-07 10:30:34'),
+(4, 1, 'фварфварвфар', 'фваывафавр', 'todo', 4, '2025-02-07 10:30:58'),
+(5, 1, 'Привет тест', 'ну типо работает', 'done', 1, '2025-04-14 07:30:27');
 
 -- --------------------------------------------------------
 
@@ -102,7 +108,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'valvin', 'vvs19999@mail.com', 'vvs201175');
+(1, 'valvin', 'vvs19999@mail.com', 'vvs201175'),
+(2, 'vin', 'vvs@mail.ru', '1234'),
+(3, 'vin', 'vvs@111', '$2y$10$QB0Yyh9OsBGiufpxCwl9w.ckUqHVW/HXes8RoH95AEXHmhM2M3Qxu'),
+(4, 'vin', 'vvvs@mail.ru', '$2y$10$o./7mXsotE0t/5SrlAAxU.LvurdhfqTxQVzH21zsGoOXYk6/JCjme');
 
 --
 -- Индексы сохранённых таблиц
@@ -144,19 +153,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
